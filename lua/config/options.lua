@@ -2,7 +2,9 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
--- add file path to top right of editor
+vim.g.autoformat = false
+
+
 vim.opt.winbar = "%=%m %f"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
@@ -10,7 +12,8 @@ vim.opt.fileencoding = "utf-8"
 vim.opt.number = true
 
 vim.opt.title = true
-vim.opt.autoindent = true
+vim.opt.autoindent = false
+vim.opt.relativenumber = false
 vim.opt.smartindent = true
 vim.opt.hlsearch = true
 vim.opt.backup = false
@@ -19,7 +22,7 @@ vim.opt.cmdheight = 1
 vim.opt.laststatus = 2
 vim.opt.expandtab = true
 vim.opt.scrolloff = 10
-vim.opt.shell = "fish"
+vim.opt.shell = "zshell"
 vim.opt.inccommand = "split"
 vim.opt.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
 vim.opt.smarttab = true
@@ -34,4 +37,3 @@ vim.opt.splitbelow = true -- Put new windows below current
 vim.opt.splitright = true -- Put new windows right of current
 vim.opt.splitkeep = "cursor"
 vim.opt.mouse = ""
-
