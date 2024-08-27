@@ -11,10 +11,13 @@ vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { noremap = true, desc = "Save wi
 vim.keymap.set({ "n", "v" }, "<M-k>", "10k", { noremap = true, desc = "Up faster" })
 vim.keymap.set({ "n", "v" }, "<M-j>", "10j", { noremap = true, desc = "Down faster" })
 
--- For Code
+-- For methods {...}
 vim.keymap.set({ "n" }, "<M-[>", "zfaB", { noremap = true, desc = "Creates fold and toggle point" })
 
--- For HTML
+-- For single arrays []
+vim.keymap.set({ "n" }, "<M-[>", "zfa[", { noremap = true, desc = "Creates fold and toggle point" })
+
+-- Fold HTML tags
 vim.keymap.set({ "n" }, "<M-t>", "zfat", { noremap = true, desc = "Creates fold and toggle point for HTML tag" })
 
 -- Toggle folded code
