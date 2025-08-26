@@ -22,8 +22,8 @@ require("lazy").setup({
     },
 
     -- import any extras modules here
-    { import = "lazyvim.plugins.extras.lang.python" },
-    { import = "lazyvim.plugins.extras.lang.typescript" },
+    -- { import = "lazyvim.plugins.extras.lang.python" },
+    -- { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     { import = "lazyvim.plugins.extras.formatting.prettier" },
@@ -32,6 +32,18 @@ require("lazy").setup({
 
     -- import/override with your plugins
     { import = "plugins" },
+
+    -- Disable for html tags only
+    {
+        "echasnovski/mini.ai",
+        opts = function(_, opts)
+          opts.custom_textobjects = {
+            t = false, -- fallback to neovim for tags
+          }
+        end,
+    },
+
+
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -48,8 +60,8 @@ require("lazy").setup({
       -- disable some rtp plugins
       disabled_plugins = {
         "gzip",
-        -- "matchit",
-        -- "matchparen",
+        "matchit",
+        "matchparen",
         -- "netrwPlugin",
         "tarPlugin",
         "tohtml",

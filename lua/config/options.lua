@@ -4,6 +4,13 @@
 
 vim.g.autoformat = false
 
+--vim.opt.foldmethod="manual"
+
+vim.opt.foldmethod = "manual"
+vim.opt.foldexpr = "v:lua.FunctionFoldExpr()"
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
 
 vim.opt.winbar = "%=%m %f"
 vim.opt.encoding = "utf-8"
