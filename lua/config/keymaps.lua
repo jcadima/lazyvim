@@ -8,8 +8,8 @@ vim.keymap.set("i", "jj", "<ESC>", { noremap = true, silent = true, desc = "<ESC
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { noremap = true, desc = "Save window" })
 
 -- faster scrolling with  ALT+j, ALT+k  (PC)
--- vim.keymap.set({ "n", "v" }, "<M-k>", "10k", { noremap = true, desc = "Up faster" })
--- vim.keymap.set({ "n", "v" }, "<M-j>", "10j", { noremap = true, desc = "Down faster" })
+vim.keymap.set({ "n", "v" }, "<M-k>", "10k", { noremap = true, desc = "Up faster" })
+vim.keymap.set({ "n", "v" }, "<M-j>", "10j", { noremap = true, desc = "Down faster" })
 
 vim.keymap.set("n", "<S-u>", "10k", { noremap = true, silent = true, desc = "up 10" })
 vim.keymap.set("n", "<S-d>", "10j", { noremap = true, silent = true, desc = "down 10" })
