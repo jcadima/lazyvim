@@ -1,12 +1,6 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
--- change to normal mode with "jj"
-vim.keymap.set("i", "jj", "<ESC>", { noremap = true, silent = true, desc = "<ESC>" })
-
--- Save file
-vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { noremap = true, desc = "Save window" })
-
 -- faster scrolling with  ALT+j, ALT+k  (PC)
 vim.keymap.set({ "n", "v" }, "<M-k>", "10k", { noremap = true, desc = "Up faster" })
 vim.keymap.set({ "n", "v" }, "<M-j>", "10j", { noremap = true, desc = "Down faster" })
@@ -41,8 +35,27 @@ vim.keymap.set("n", "<Space>j", "<C-d>", { desc = "Half page down" })
 
 
 
-vim.keymap.set("n", "gk", "8k", { desc = "Move up 8 lines" })
-vim.keymap.set("n", "gj", "8j", { desc = "Move down 8 lines" })
+-- Claude Code Review Workflow keymaps
+vim.keymap.set("n", "<leader>ca", function()
+  require("gitsigns").stage_hunk()
+end, { desc = "Approve/Stage Current Hunk" })
 
-vim.keymap.set("n", "zh", "8k", { desc = "Move up 8 lines" })
-vim.keymap.set("n", "zl", "8j", { desc = "Move down 8 lines" })
+vim.keymap.set("n", "<leader>cr", function()
+  require("gitsigns").reset_hunk()
+end, { desc = "Reject/Reset Current Hunk" })
+
+vim.keymap.set("n", "<leader>cv", "<cmd>DiffviewOpen<cr>", { desc = "Review All Changes" })
+vim.keymap.set("n", "<leader>cq", "<cmd>DiffviewClose<cr>", { desc = "Close Review" })
+
+vim.keymap.set("n", "<leader>cp", function()
+  require("gitsigns").preview_hunk()
+end, { desc = "Preview Hunk" })
+
+-- Visual mode for partial hunk staging
+vim.keymap.set("v", "<leader>ca", function()
+  require("gitsigns").stage_hunk({vim.fn.line("."), vim.fn.line("v")})
+end, { desc = "Approve/Stage Selected Lines" })
+
+vim.keymap.set("v", "<leader>cr", function()
+  require("gitsigns").reset_hunk({vim.fn.line("."), vim.fn.line("v")})
+end, { desc = "Reject/Reset Selected Lines" })

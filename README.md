@@ -3,6 +3,8 @@
 This repository contains my **personal LazyVim setup** for Neovim, including custom plugins, keymaps, and editor settings. It is tailored for **PHP development (Laravel/Blade)**, file browsing, and productivity enhancements.
 <br>
 
+You need to have installed Lazyvim already, only the **lua** directgory is provided so you can add only files that you need for your personal configuration
+
 ## Theme
 
 **Plugin:** `craftzdog/solarized-osaka.nvim`
@@ -34,47 +36,6 @@ Plugin: nvim-telescope/telescope-file-browser.nvim
 **Plugin:** `jwalton512/vim-blade`
 
 
-## ⚙️ Editor Options
-
-```
-vim.opt.foldmethod = "manual"
-vim.opt.foldexpr = "v:lua.FunctionFoldExpr()"
-vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 99
-vim.opt.foldenable = true
-
-vim.opt.winbar = "%=%m %f"
-vim.opt.encoding = "utf-8"
-vim.opt.fileencoding = "utf-8"
-
-vim.opt.number = true
-vim.opt.title = true
-vim.opt.autoindent = false
-vim.opt.relativenumber = false
-vim.opt.smartindent = true
-vim.opt.hlsearch = true
-vim.opt.backup = false
-vim.opt.showcmd = true
-vim.opt.cmdheight = 1
-vim.opt.laststatus = 2
-vim.opt.expandtab = true
-vim.opt.scrolloff = 10
-vim.opt.shell = "zshell"
-vim.opt.inccommand = "split"
-vim.opt.ignorecase = true
-vim.opt.smarttab = true
-vim.opt.breakindent = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.wrap = false
-vim.opt.backspace = { "start", "eol", "indent" }
-vim.opt.path:append({ "**" })
-vim.opt.wildignore:append({ "*/node_modules/*" })
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-vim.opt.splitkeep = "cursor"
-vim.opt.mouse = ""
-```
 
 ## ⌨️ Keymaps
 This setup includes custom keymaps to improve navigation, editing, folding, and buffer management in Neovim. All keymaps are designed for **efficiency and speed**.
@@ -82,25 +43,6 @@ This setup includes custom keymaps to improve navigation, editing, folding, and 
 - jj is a faster alternative to <ESC> to leave insert mode.
 - Scrolling shortcuts (<S-u>, <S-d>, <Space>j/k, gk/gj) provide faster vertical navigation without losing context.
 - Buffer management keymaps make switching and closing files quick and convenient.
-
-
-
-
-## 🚀 Usage
-
-1. Clone the repository:
-```
-git clone https://github.com/yourusername/lazyvim-config.git
-```
-
-2. Copy or symlink your config files to Neovim:
-```
-ln -s lazyvim-config ~/.config/nvim
-```
-
-3. Open Neovim and enjoy your customized setup!
-
-
 
 
 
