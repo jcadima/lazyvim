@@ -20,7 +20,6 @@ Plugin: nvim-telescope/telescope-file-browser.nvim
 - File browser integration within Telescope.
 
 
-
 ## 🖥 LSP Setup
 
 **Plugin:** `neovim/nvim-lspconfig`
@@ -35,6 +34,11 @@ Plugin: nvim-telescope/telescope-file-browser.nvim
 
 **Plugin:** `jwalton512/vim-blade`
 
+## modifications to /lua/plugins/extra_languages.lua
+Disable mini.ai: its Lua pattern-based tag matching breaks vat/vit on nested same-name tags
+```
+{ "nvim-mini/mini.ai", enabled = false },  
+```
 
 
 ## ⌨️ Keymaps
